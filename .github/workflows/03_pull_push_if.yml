@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: push
         if: ${{ github.event_name == 'push' }}
-        run: c'est un push
+        run: echo c'est un push
   pull:
     runs-on: ubuntu-latest
     steps:
