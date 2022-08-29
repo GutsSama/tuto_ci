@@ -3,7 +3,7 @@ name: learn-github-actions
 on: [push]
 
 
-job:
+jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps: 
