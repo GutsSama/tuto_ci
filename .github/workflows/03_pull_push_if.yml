@@ -1,8 +1,18 @@
 name: push-pull
 
+on: workflow_dispatch
+
+
 jobs:
   push:
     runs-on: ubuntu-latest
     steps:
       - name: push
-        run: echo ${{ github.event_name }}
+        if: ${{ github.event_name == 'push' }}
+        run: echo "c'est un push"
+  pull:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull
+        if: ${{ github.event_name == 'pull_request' }}
+        run: echo "c'est une pull request"
