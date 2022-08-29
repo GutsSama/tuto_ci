@@ -8,8 +8,3 @@ jobs:
     steps:
       - name: push
         run: echo ${{ github.GITHUB_ACTION  }}
-jobs:
-  pull:
-    runs-on: ubuntu-latest
-    steps:
-      - name: pull
