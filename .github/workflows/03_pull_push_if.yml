@@ -7,11 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: push
-        if: ${{ github.event_name == 'push' }}
-        run: echo c'est un push
-  pull:
-    runs-on: ubuntu-latest
-    steps:
-      - name: pull
-        if: ${{ github.event_name == 'pull_request' }}
-        run: echo "c'est une pull request"
+        run: echo ${{ github.event_name }}
