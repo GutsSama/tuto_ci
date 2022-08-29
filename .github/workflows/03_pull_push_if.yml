@@ -1,0 +1,15 @@
+name: push-pull
+
+on: workflow_dispatch
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: push
+        run: echo ${{ github.GITHUB_ACTION  }}
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull
