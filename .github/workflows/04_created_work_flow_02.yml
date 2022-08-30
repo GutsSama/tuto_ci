@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: closed_pr
-        run: echo "pull request merge"
+        run: echo "pull request merge test"
 
   next_one:
     needs: [closed_pull_request]
