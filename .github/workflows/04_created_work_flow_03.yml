@@ -1,0 +1,18 @@
+name: created work flow 04 manual needs
+
+on: workflow_dispatch
+jobs:
+  manual:
+    runs-on: ubuntu-latest
+    steps:
+      - name: manual
+        run: echo "manual is on"
+
+  my_needs:
+    needs: [manual]
+    runs-on: ubuntu-latest
+    steps:
+      - name: needs
+        run: echo "needs is on"
+
+  
