@@ -6,9 +6,9 @@ jobs:
   exemple:
     strategy:
     fail-fast: true
-      matrix:
-        fruits: [banane, concombre, courgette, carotte]
-        gourmandes: [remi, kevin, phil]
+    matrix:
+      fruits: [banane, concombre, courgette, carotte]
+      gourmandes: [remi, kevin, phil]
     runs-on: ubuntu-lastest
     steps:
       - name: manger des fruits
