@@ -1,15 +1,16 @@
-name: pipeline
+name: pipeline fruits
 
 on: workflow_dispatch
 
 jobs:
   exemple:
+    name: manger des fruits
+    runs-on: ubuntu-lastest
     strategy:
     fail-fast: true
     matrix:
       fruits: [banane, concombre, courgette, carotte]
       gourmandes: [remi, kevin, phil]
-    runs-on: ubuntu-lastest
     steps:
       - name: manger des fruits
         run: echo "${{ matrix.gourmandes }} suce un ${{ matrix.fruits }}, et il adore ça"
