@@ -1,0 +1,14 @@
+name: created work flow 01 Issue
+
+on:
+  issues:
+    types:
+      - opened
+
+
+jobs:
+  new_issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: push
+        run: echo "issue crée"
