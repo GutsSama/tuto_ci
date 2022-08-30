@@ -1,0 +1,28 @@
+name: Upload Artifact
+
+on: workflow_dispatch
+
+jobs:
+  upload:
+    name: Upload
+    runs-on: ubuntu-lastest
+    steps:
+      - name: Créer le fichier
+        run: echo "Coucou toi <3" > artifact.txt
+      - name: Upload Atifact
+        uses: action/upload-artifact@v3
+        with:
+          name: Artifact
+          path: artifact.txt
+
+  download:
+    name: Download
+    needs: upload
+    runs-on: ubuntu-latest
+    steps:
+      - name: download
+        uses: action/download-artifact@v3
+        with:
+          name: Atifact
+      - name: Lire le fichier
+        run: cat artifact.txt
