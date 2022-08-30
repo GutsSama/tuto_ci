@@ -1,0 +1,21 @@
+name: created work flow 02 PR
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  closed_pull_request:
+  if: ${{ github.event.pull_request.merged == true }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: closed_pr
+        run: echo "pull request merge"
+
+  next_one:
+    needs: [closed_pull_request]
+    runs-on: ubuntu-latest
+    steps:
+      - name: next one
+        run: echo "next one is on"
