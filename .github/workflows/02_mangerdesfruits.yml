@@ -7,9 +7,9 @@ jobs:
     name: manger des fruits
     runs-on: ubuntu-lastest
     strategy:
-    matrix:
-      fruits: [banane, concombre, courgette, carotte]
-      gourmandes: [remi, kevin, phil]
+      matrix:
+        fruits: [banane, concombre, courgette, carotte]
+        gourmandes: [remi, kevin, phil]
     steps:
       - name: manger des fruits
         run: echo "${{ matrix.gourmandes }} suce un ${{ matrix.fruits }}, et il adore ça"
