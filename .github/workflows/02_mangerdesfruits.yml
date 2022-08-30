@@ -5,10 +5,13 @@ on: workflow_dispatch
 jobs:
   exemple:
     strategy:
+    fail-fast: true
+    max-parallel: 2
       matrix:
         fruits: [banane, concombre, courgette, carotte]
         gourmandes: [remi, kevin, phil]
     runs-on: ubuntu-lastest
     steps:
       - name: manger des fruits
-        run: echo "${{ matrix.gourmandes }} suce un ${{ matrix.fruits }}, et il adore ça"
+        with:
+          manger_les_fruits: echo "${{ matrix.gourmandes }} suce un ${{ matrix.fruits }}, et il adore ça"
